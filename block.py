@@ -23,7 +23,7 @@ def check_integrity():#проверяет целостность цепочки 
     results=[]
     
     for file in files[1:]: 
-        h = json.load(open(blockchain_dir+str(file)))['hash']#возвращает словарь
+        h = json.load(open(blockchain_dir+str(file)))['hash']#извлекаем хэш предыдущего блока
 
         prev_file=str(file-1)
 
@@ -58,7 +58,7 @@ def write_block(name,amount,to_whom,prev_hash=''):#функция добавле
    
 
 def main():
-     write_block(name='olya',amount=8,to_whom='ksu')
+     write_block(name='olya',amount=8,to_whom='ksu')#добавляет блок
    #print(check_integrity())
 
 
